@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const App = () =>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <>   
+      <Header title=" Encabezado de la pagina"  status= "1" />
+      <Title title="Este es el titulo de la pagina" tipo="encabezado1"/>
+      <Title title="Este es el titulo de la pagina" tipo="encabezado2"/>
+      <Content/>
+      <Footer/>
+    </>
   );
 }
+const Title = (props) => { 
+  
+  return  props.tipo ==="encabezado1" ?<h1>{props.title} </h1> :  <h2>{props.title} </h2>;
+  };
+const Header= (props) =>  <header> {props.title}</header>;
+const Content= (props) =>  <section> Contenido de la pagina</section>;
+const Footer = (props) =>  <footer> Pie de la pagina</footer>;
 
 export default App;
